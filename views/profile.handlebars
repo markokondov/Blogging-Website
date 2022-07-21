@@ -1,0 +1,80 @@
+<div class="flex-grid">
+
+  {{! profile side bar }}
+  <div class="card-bio opaque">
+    <br>
+    <img class="center-img" src="images{{userInfo.avatar}}" alt="Avatar" style="width:50%" />
+    <div class="card-text">
+      <h4 class="center-align"><b>{{userInfo.username}}</b></h4>
+      <p>{{userInfo.fullName}}</p>
+      <p>{{userInfo.DOB}}</p>
+      <p>{{userInfo.description}}</p>
+      <br>
+
+      {{! comment approval section }}
+      {{#if ownProfile}}
+      <div>
+        <h3 class="left-align">Approve comments</h3>
+        {{#if unapprovedComments}}
+        <ul class="bullet-point" id="unapprovedCommentsList" style="padding-left: 20px">
+          {{#each unapprovedComments}}
+          <div id="id{{this.id}}">
+            <li>
+              <em>Article: {{this.title}}</em>
+              <br>
+              Comment: "{{this.content}}"
+            </li>
+            <button type="button" class="commentBtn approveCommentBtn" value="{{this.id}}">Approve</button>
+            <button type="button" class="deleteCommentBtn" value="{{this.id}}">Delete</button>
+
+          </div>
+          {{/each}}
+        </ul>
+        {{else}}
+        <p class="left-align">No comments to approve</p><br />
+        {{/if}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="main opaque">
+
+    {{!-- 'my articles' title --}}
+    {{#if ownProfile}}
+    <h1 class="margin-bottom heading"><strong>My articles</strong></h1>
+
+    {{else}}
+    <h1 class="heading"><strong>{{userInfo.fullName}}'s articles</strong></h1>
+    <br>
+    {{/if}}
+
+
+    {{!-- create a new article section --}}
+    {{#if ownProfile}}
+    <br>
+    <div class="addArticleBtn">
+      <a href="/createArticle" class="addArticles">Create a new article</a>
+    </div>
+    <br>
+    {{/if}}
+
+    {{!-- display existing articles --}}
+    <div class="subboxflex-profile">
+      {{#if articles}}
+      {{#each articles}}
+      <form action="/article" method="get" type="submit">
+        <button class="flexbox-profile button">
+          <h4>{{this.title}}</h4>
+          <p class="left-align">Overview: {{this.overview}}</p>
+          <p>Time: {{this.time}}</p>
+          <input type="hidden" name="id" value="{{this.id}}">
+        </button>
+      </form>
+      {{/each}}
+      {{else}}
+      <p class="center-align">You haven't published any articles yet.</p>
+      {{/if}}
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="application/javascript" src="/responsive-navbar-function.js"></script>
+    <script type="application/javascript" src="/client-side.js"></script>
+    <script src="https://cdn.tiny.cloud/1/owubgdim95x124w7a6h484bottzpoodzkp0pz5esnym0r6ip/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+
+    {{#if script}}
+    {{{script}}}
+    {{/if}}
+
+
+    <meta charset="UTF-8">
+    {{#if pageTitle}}
+    <title>{{pageTitle}}</title>
+    {{else}}
+    <title>Default title</title>
+    {{/if}}
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="/" {{#if homePage}}class="active" {{/if}}>Homepage</a>
+        {{#if user}}
+        <a href="/profile" {{#if profile}}class="active" {{/if}}>Profile</a>
+        <a href="/createArticle" {{#if createArticle}}class="active" {{/if}}>Create Article</a>
+        <a href="/settings" {{#if settingsPage}}class="active" {{/if}}>Settings</a>
+        <a href="/logout" class="float-r">Logout</a>
+        {{else}}
+        <a href="/login" {{#if login}}class="active" {{/if}}>Login</a>
+        <a href="/register" {{#if register}}class="active" {{/if}}>Create Account</a>
+        {{/if}}
+        <a href="javascript:void(0);" class="icon" onclick="dropdown()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="container">
+        {{{body}}}
+    </div>
+
+</body>
+
+</html>

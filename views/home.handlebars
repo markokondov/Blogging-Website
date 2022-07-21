@@ -1,0 +1,44 @@
+<h1 class="margin-bottom padding-top heading"><strong>Articles</strong></h1>
+<p class="center-align">Browse the latest articles</p>
+
+{{!-- dropdown filters --}}
+<div class="sorting">
+
+    <div class="dropdown">
+        <button class="dropbtn">Sort by:</button>
+        <div class="sortMenu">
+            <a href="/?author">Author</a>
+            <a href="/?title">Title</a>
+            <a href="/?time">Date</a>
+            {{#if user}}
+            <a href="/?favourited">Favourited</a>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Filter category:</button>
+        <div class="sortMenu">
+            <a href="/?time">All categories</a>
+            <a href="/?1">Data Science</a>
+            <a href="/?2">Health</a>
+            <a href="/?3">Politics</a>
+            <a href="/?4">Machine Learning</a>
+            <a href="/?5">Javascript</a>
+            <a href="/?6">Green Energy</a>
+            <a href="/?7">Business</a>
+            <a href="/?8">Travel</a>
+            <a href="/?9">Digitilisation</a>
+            <a href="/?10">Gaming</a>
+        </div>
+    </div>
+
+</div>
+
+{{!-- articles are added from client side to display in this div --}}
+<div class="gridbox subboxflex" id="divForArticles"> </div>
+
+<div class="end">
+    <button id="loadButton" style="padding:15px;">Load more</button>
+
+</div>

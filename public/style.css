@@ -1,0 +1,444 @@
+/* general styling */
+body {
+  background-image: url("./images/pyrenees.jpg");
+}
+
+@import url("./utils.css");
+
+* {
+  /* font-family: Verdana, Geneva, sans-serif; */
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+  color: #706F6F;
+  line-height: 23px;
+}
+
+p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.p {
+    font-size: 14px;
+}
+
+a:visited {
+  color: #706F6F;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  line-height: normal;
+}
+
+.heading {
+  color: white;
+}
+
+.float-l {
+    float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+img {
+  object-fit: cover;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+  }
+
+.center-align {
+    text-align: center;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.top-margin {
+  margin-top: 50px;
+}
+
+.margin-bottom {
+    margin-bottom: -15px;
+}
+
+.padding-top {
+  padding-top: 40px;
+}
+
+.container {
+  padding-top: 40px;
+}
+
+.white-bkgd {
+  background-color: white;
+  padding: 10px;
+}
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.smallText {
+    font-size: smaller;
+}
+.card   {
+  width: auto;
+  height: auto;
+}
+
+.card-text {
+  padding: 2px;
+  text-decoration: none;
+  color: black;
+}
+
+div.card {
+  width: auto;
+  height: auto;
+  background-color: white;
+  box-shadow: 3px 3px 5px #706F6F;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+form .form-group {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.btn-padding {
+  padding: 8px;
+  font-weight: bold;
+}
+
+.bullet-point{
+  list-style-type: circle;
+}
+
+/* for article buttons */
+.subboxflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subboxflex-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flexbox-animated {
+  opacity: 0;
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  height: 100%;
+  overflow: hidden;
+  animation-name: fade-article;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-article {
+  from {
+      opacity: 0
+  }
+  to {
+      opacity: 0.8
+  }
+}
+
+.flexbox-animated:hover {
+  opacity: 1;
+}
+
+.flexbox-profile {
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.flexbox-profile:hover {
+  opacity: 1;
+}
+
+.button {
+  background-color: white;
+  border: solid #a5a5a5 1px;
+}
+
+.button:hover {
+  box-shadow: 3px 3px 5px #a5a5a5;
+}
+
+.opaque {
+  opacity: 0.9;
+}
+
+/* for article drop down */
+.sorting {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 15px;
+}
+
+p {
+  text-align: justify;
+  font-size: 16px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  line-height: normal;
+}
+
+.dropbtn {
+  min-width:120px;
+}
+
+.sortMenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  z-index: 2;
+}
+
+/* for links inside the dropdown */
+.sortMenu a {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+}
+
+/* to change the color of dropdown links on hover */
+.sortMenu  a:hover {
+  background-color: rgb(224, 249, 250);
+}
+
+/* to show the dropdown menu on hover */
+.dropdown:hover .sortMenu {
+  display: block;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.active {
+    font-weight: bold;
+    background-color: rgb(74, 132, 218);
+    color: white;
+}
+
+/* for comments section */
+textarea {
+  width:100%;
+}
+
+.comments-section {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: #dcdcdc;
+}
+
+/* avatar display styling */
+.avatar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 20px 0px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectAvatar {
+  height: 200px;
+  width: 200px;
+}
+
+.taken {
+  background-color: rgb(238, 170, 170);
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 20px 0px;
+}
+
+/* for submitting username */
+#userSubmit {
+  margin-top: 30px;
+}
+
+/* for profile */
+.flex-grid {
+  color: white;
+  display: flex;
+}
+
+.card-bio {
+  flex: 1;
+  height: 100vh;
+  background-color: white;
+  z-index: 1; 
+  left: 0;
+  overflow: hidden; 
+  padding-left: 10px;
+  padding-top: 20px;
+  box-shadow: 3px 3px 5px #a5a5a5;
+}
+
+
+.main {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  background-color: rgb(187, 213, 255);
+}
+
+.addArticleBtn {
+  text-align: center;
+  padding: 20px;
+  height: 20px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.addArticleBtn:hover {
+  background-color: whitesmoke;
+  }
+
+.addArticles {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+/* navbar styling */
+.navbar {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgb(187, 213, 255);
+  color: white;
+} 
+
+.navbar a.active{
+  color: white;
+}
+
+/* responsive design */
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+
+  .navbar.responsive {
+    position: relative;
+  }
+
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 960px) {
+    .container {
+        width: 90vw;
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+  .avatar-grid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    width: auto;
+  }
+} 
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .avatar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

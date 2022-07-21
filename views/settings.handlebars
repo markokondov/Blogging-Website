@@ -1,0 +1,127 @@
+<h1 class="margin-bottom heading"><strong>Settings</strong></h1>
+<br>
+  {{#if toastMessage}}
+  <p>{{toastMessage}}</p>
+  {{/if}}
+
+  {{!-- update user section --}}
+  <div class="card opaque">
+    <div class="card-body">
+      <h3 class="card-title">Update Username</h3>
+
+      <form action="/updateUsername" method="POST">
+        <div class="form-group">
+          <input type="text" id="oldUsername" name="oldUsername" placeholder="Current username" required /><span
+            id="takenMessage"></span>
+          <br>
+          <input type="text" id="username" name="newUsername" placeholder="New username" required />
+          <input type="submit" value="Change Username" id="userSubmit" />
+        </div>
+      </form>
+    </div>
+  
+  
+    <div class="card-body">
+      <h3 class="card-title">Update Password</h3>
+      <form action="/updatePassword" method="POST">
+        <div class="form-group">
+          <input type="password" id="oldPassword" name="oldPassword" placeholder="Current password" required />
+          <br>
+          <input type="password" id="password" name="newPassword" placeholder="New password" required />
+          <br>
+          <input type="password" id="password2" name="confirmPassword" placeholder="Confirm new password"
+            required /><span id="dontMatch"></span>
+          <br>
+          <input id="changePasswordSubmit" type="submit" value="Change password" />
+        </div>
+      </form>
+    </div>
+
+
+    <div class="card-body">
+      <h3 class="card-title">Update Description</h3>
+      <form action="updateDesc" method="POST">
+        <div class="form-group">
+          <textarea id="newDescription" name="newDescription" placeholder="Update your description" rows="4" cols="50"
+            maxlength="1000" required></textarea>
+          <br>
+          <input type="submit" value="Change description" />
+        </div>
+      </form>
+    </div>
+
+
+    <div class="card-body">
+      <h3 class="card-title">Change My Avatar</h3>
+      <form action="updateAvatar" method="POST">
+        <div class="avatar-grid">
+          <div class="avatar">
+            <label for="bear">
+              <input
+              type="radio"
+              id="bear"
+              name="avatar"
+              value="/Bear.PNG"
+              checked
+              />
+              <img src="./images/Bear.PNG" class="selectAvatar" />
+            </label>
+          </div>
+
+          <div class="avatar">
+            <label for="bug">
+              <input type="radio" id="bug" name="avatar" value="/Bug.PNG" />
+              <img src="./images/Bug.PNG" class="selectAvatar" />
+            </label>
+          </div>
+
+          <div class="avatar">
+            <label for="deer">
+              <input type="radio" id="deer" name="avatar" value="/Deer.PNG" />
+              <img src="./images/Deer.PNG" class="selectAvatar" />
+            </label>
+          </div>
+
+          <div class="avatar">
+            <label for="dog">
+              <input type="radio" id="dog" name="avatar" value="/Dog.PNG" />
+              <img src="./images/Dog.PNG" class="selectAvatar" />
+            </label>
+          </div>
+
+          <div class="avatar">
+            <label for="fox">
+              <input type="radio" id="fox" name="avatar" value="/Fox.PNG" />
+              <img src="./images/Fox.PNG" class="selectAvatar" />
+            </label>
+          </div>
+
+          <div class="avatar">
+            <label for="panda">
+              <input type="radio" id="panda" name="avatar" value="/Panda.PNG" />
+              <img src="./images/Panda.PNG" class="selectAvatar" />
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Change avatar</button>
+        </div>
+
+      </form>
+    </div>
+  
+  {{!-- delete account section --}}
+    <div class="card-body">
+      <h3 class="card-title">Delete My Account</h3>
+      <form action="/deleteAccount" method="GET">
+        <div class="form-group">
+          <button
+          type="submit"
+            onclick="return confirm('Are you sure you want to delete your account? Your comments and articles will also be deleted.')">Delete
+            account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

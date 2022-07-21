@@ -1,0 +1,76 @@
+<div class="white-bkgd opaque">
+    
+    {{#if toastMessage}}
+    <p>{{toastMessage}}</p>
+    {{/if}}
+
+    <h1 class="float-l padding-top">{{article.title}}</h1>
+
+    {{!-- favourites total --}}
+    <span class="end p top-margin" id="displayFavTotal">
+        Favourited {{favsCount}}x
+        <i class="material-icons">bookmark_border</i>
+    </span>
+
+    {{!-- edit & delete buttons --}}
+    {{#if ownArticle}}
+    <div class="p float-r"><a href="/editArticle?id={{article.id}}"> Edit </a> | <a
+            href="/deleteArticle?id={{article.id}}"
+            onclick="return confirm('Are you sure you want to delete your article? Your comments and favourites will also be deleted!')">Delete</a>
+    </div>
+    {{/if}}
+
+    {{!-- article info & content --}}
+    <h4 class="left-align padding-top">by <a href="/profile?id={{article.authorId}}">{{article.fullName}}</a></h4>
+
+    <p class=""><em>{{article.overview}}</em></p>
+
+    {{!-- display categories --}}
+    <div class="right-align">
+        <p>CATEGORIES:
+            {{#each categories}}
+            <br>{{this.name}}
+            {{/each}}
+        </p>
+    </div>
+    <p id="articleContent">{{{article.content}}}</p>
+    <p>Date: {{article.time}}</p>
+
+
+{{!-- add to favourites button --}}
+{{#if user}}
+<br>
+<div>
+    <button type="button" id="favButton">{{isFavourited}}</button>
+</div>
+
+{{!-- add comments section --}}
+<br>
+        <form method="post" action="/submit-comment">
+            <fieldset>
+                <legend>Add a comment</legend>
+                <p>
+                    <textarea name="comment" id="comment" rows="2" required></textarea>
+                </p>
+                <input type="hidden" name="id" value="{{article.id}}">
+                <input type="submit" value="Submit comment">
+            </fieldset>
+        </form>
+    {{/if}}
+    <br>
+
+
+{{!-- display comments section --}}
+    <div class="comments-section">
+        <h3>Comments</h3>
+        {{#if comments}}
+        {{#each comments}}
+        <div>
+            <h5><em>{{this.fullName}}</em>: {{this.content}}</h5>    
+        </div>
+        {{/each}}
+        {{else}}
+        <p class="center-align">There are no comments on this article yet - be the first!</p>
+        {{/if}}
+    </div>
+</div>

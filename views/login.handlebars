@@ -1,0 +1,23 @@
+<h1 class="heading"><strong>Login</strong></h1>
+
+
+{{#if toastMessage}}
+{{toastMessage}}
+{{/if}}
+
+{{!-- login form --}}
+<div class="card opaque">
+    <div class="card-body">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Log in">
+            </div>
+        </form>
+    </div>
+</div>

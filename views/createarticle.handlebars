@@ -1,0 +1,52 @@
+<div>
+        <h1 class="margin-bottom heading"><strong>Create a New Article</strong></h1>
+<br>
+    
+    <div class="card opaque">
+        <div class="card-body">
+
+            {{!-- create new article form --}}
+            <form action="/submitArticle" method="POST">
+
+                {{!-- title --}}
+                <div class="form-group">
+                    <label for="title">*Title:</label>
+                    <input id="title" type="text" name="articleTitle" required>
+                </div>
+
+                {{!-- category selection --}}
+                <div class="form-group">
+                    <label for="categoryName">*Category:</label>
+                    <label><input type="checkbox" name="category" value="1"> Data Science</label>
+                    <label><input type="checkbox" name="category" value="2"> Health</label>
+                    <label><input type="checkbox" name="category" value="3"> Politics</label>
+                    <label><input type="checkbox" name="category" value="4"> Machine Learning</label>
+                    <label><input type="checkbox" name="category" value="5"> Javascript</label>
+                    <label><input type="checkbox" name="category" value="6"> Green Energy</label>
+                    <label><input type="checkbox" name="category" value="7"> Business</label>
+                    <label><input type="checkbox" name="category" value="8"> Travel</label>
+                    <label><input type="checkbox" name="category" value="9"> Digitalisation</label>
+                    <label><input type="checkbox" name="category" value="10"> Gaming</label>
+                </div>
+
+                {{!-- overview description --}}
+                <div class="form-group">
+                    <label for="overview">*Overview:</label>
+                    <input id="overview" type="text" name="overview" required>
+                </div>
+
+                {{!-- text area for article --}}
+                <div class="form-group">
+                    {{!-- <label for="content">Article Content:</label> --}}
+                    <textarea id="content" name="content" rows="20" placeholder="Start writing your article here"></textarea>
+                </div>
+
+                {{!-- publish button --}}
+                <div class="form-group">
+                    <input type="submit" value="Publish">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
